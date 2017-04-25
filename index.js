@@ -39,7 +39,10 @@ exports.getHTML = function(url, cb){
 			url: url,
 			encoding: 'utf8',
 			gzip: true,
-			jar: true
+			jar: true,
+			headers: {
+				'user-agent': 'node.js'
+			}
 		},
 		function(err, res, body) {
 			if (err) return cb(err);
